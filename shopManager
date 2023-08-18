@@ -7,7 +7,8 @@ using TMPro;
 
 public class ShopManagerScript : MonoBehaviour
 {
-    public PlayerData playerData;
+    [SerializeField]
+    private PlayerData playerData;
     public int[,] shopItems = new int[5, 5];
     public TMP_Text GoldTXT;
     public int gold;
