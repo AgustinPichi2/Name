@@ -14,7 +14,6 @@ public class ShopManagerScript : MonoBehaviour
 
     void Start()
     {
-        playerData = FindObjectOfType<PlayerData>();
         GoldTXT.text = "" + gold.ToString();
 
         shopItems[1, 1] = 1;
@@ -41,6 +40,7 @@ public class ShopManagerScript : MonoBehaviour
         {
             gold -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID];
             shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++;
+            Debug.Log("Gold is " + gold);
             playerData.currentGold = gold;
             GoldTXT.text = "" + gold.ToString();
             ButtonRef.GetComponent<ButtonInfo>().QuantityTxt.text = shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID].ToString();
